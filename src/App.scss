@@ -77,9 +77,19 @@
   color: var(--gray-color);
   line-height: 1.5;
 
-  
   @media screen and (min-width: 1920px) {
     font-size: 1.75rem;
+  }
+}
+.p-text2 {
+  font-size: 0.95rem;
+  text-align: left;
+  color: var(--gray-color);
+  line-height: 1.5;
+  // text-align: justify;
+
+  @media screen and (min-width: 1920px) {
+    font-size: 1rem;
   }
 }
 
@@ -89,7 +99,7 @@
   color: var(--black-color);
   text-align: left;
 
-  @media screen and (min-width: 2000px) {
+  @media screen and (min-width: 1920px) {
     font-size: 2rem;
   }
 

@@ -23,11 +23,11 @@
 
   padding: 6rem 2rem 0rem;
 
-  @media screen and (min-width: 2000px) {
+  @media screen and (min-width: 1920px) {
     padding-top: 8rem;
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1280px) {
     flex-direction: column;
   }
 
@@ -46,11 +46,70 @@
 
   margin: 0 2rem;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1280px) {
     width: 100%;
     margin-right: 0rem;
   }
 }
+
+// .app__header-badge {
+//   width: 100%;
+//   display: flex;
+//   justify-content: flex-end;
+//   align-items: flex-end;
+//   flex-direction: column;
+//   .logo__container {
+//     width: 6rem;
+//     margin: 0;
+//   }
+//   .badge-cmp {
+//     padding: 1rem 1rem 0rem 1rem;
+//     margin-bottom: 0;
+//     background: var(--white-color);
+//     border-radius: 15px;
+//     flex-direction: row;
+//     width: auto;
+
+//     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+//   }
+
+//   .tag-cmp {
+//     padding: 0.5rem 1rem 0.5rem 1rem;
+//     margin-bottom: 0;
+//     background: var(--white-color);
+//     border-radius: 15px;
+//     flex-direction: row;
+//     width: auto;
+    
+
+//     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+//   }
+
+//   .tag-cmp {
+//     flex-direction: column;
+//     margin-top: 3rem;
+
+//     p {
+//       width: 100%;
+//       text-transform: capitalize;
+//       text-align: left;
+//       font-size: 1.1rem;
+//     }
+//   }
+
+//   span {
+//     font-size: 3.5rem;
+
+//     @media screen and (min-width: 1920px) {
+//       font-size: 5rem;
+//     }
+//   }
+
+//   @media screen and (max-width: 1200px) {
+//     justify-content: flex-start;
+//     align-items: flex-start;
+//   }
+// }
 
 .app__header-badge {
   width: 100%;
@@ -58,29 +117,14 @@
   justify-content: flex-end;
   align-items: flex-end;
   flex-direction: column;
-  .logo__container {
-    width: 6rem;
-    margin: 0;
-  }
-  .badge-cmp {
-    padding: 1rem 1rem 0rem 1rem;
-    margin-bottom: 0;
-    background: var(--white-color);
-    border-radius: 15px;
-    flex-direction: row;
-    width: auto;
 
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  }
-
+  .badge-cmp,
   .tag-cmp {
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    margin-bottom: 0;
+    padding: 1rem 2rem;
     background: var(--white-color);
     border-radius: 15px;
     flex-direction: row;
     width: auto;
-    
 
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   }
@@ -91,16 +135,15 @@
 
     p {
       width: 100%;
-      text-transform: capitalize;
+      text-transform: uppercase;
       text-align: left;
-      font-size: 1.1rem;
     }
   }
 
   span {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
 
-    @media screen and (min-width: 1920px) {
+    @media screen and (min-width: 2000px) {
       font-size: 5rem;
     }
   }

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Tilt } from "react-tilt";
-//import { AppWrap } from '../../wrapper';
+import { AppWrap } from "../../wrapper";
 import { images } from "../../constants";
 import "./Header.scss";
 
@@ -18,7 +18,7 @@ const scaleVariants = {
 
 const Header = () => (
   <div className="app__header app__flex">
-    <motion.div
+    {/* <motion.div
       whileInView={{ x: [-100, 0], opacity: [0, 1] }}
       transition={{ duration: 0.5 }}
       className="app__header-info app__header-badge"
@@ -49,6 +49,27 @@ const Header = () => (
           </Tilt>
         </div>
       </Tilt>
+    </motion.div> */}
+    <motion.div
+      whileInView={{ x: [-100, 0], opacity: [0, 1] }}
+      transition={{ duration: 0.5 }}
+      className="app__header-info"
+    >
+      <div className="app__header-badge">
+        <div className="badge-cmp app__flex">
+          <span>👋</span>
+          <div style={{ marginLeft: 20 }}>
+            <p className="p-text">My name is</p>
+            <h1 className="head-text">Abolfazl</h1>
+          </div>
+        </div>
+
+        <div className="tag-cmp app__flex ">
+          <p className="p-text">Frontend Web Developer</p>
+
+          <p className="p-text">UI designer</p>
+        </div>
+      </div>
     </motion.div>
 
     <motion.div
@@ -72,7 +93,7 @@ const Header = () => (
       whileInView={scaleVariants.whileInView}
       className="app__header-circles"
     >
-      {[images.redux, images.react, images.sass].map((circle, index) => (
+      {[images.flutter, images.redux, images.sass].map((circle, index) => (
         <div className="circle-cmp app__flex" key={`circle-${index}`}>
           <img src={circle} alt="profile_bg" />
         </div>
@@ -81,4 +102,4 @@ const Header = () => (
   </div>
 );
 
-export default Header;
+export default AppWrap(Header, "home");
