@@ -139,7 +139,7 @@
 
     p {
       width: 100%;
-      text-transform: uppercase;
+      text-transform: capitalize;
       text-align: left;
     }
   }
@@ -147,12 +147,12 @@
   span {
     font-size: 2.5rem;
 
-    @media screen and (min-width: 2000px) {
+    @media screen and (min-width: 1920px) {
       font-size: 5rem;
     }
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1280px) {
     justify-content: flex-start;
     align-items: flex-start;
   }

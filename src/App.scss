@@ -52,7 +52,7 @@
 }
 
 .head-text {
-  font-size: 2.75rem;
+  font-size: 2.55rem;
   font-weight: 800;
   text-align: center;
   color: var(--black-color);
@@ -62,7 +62,7 @@
     color: var(--secondary-color);
   }
 
-  @media screen and (min-width: 2000px) {
+  @media screen and (min-width: 1920px) {
     font-size: 4rem;
   }
 
@@ -121,12 +121,27 @@
     font-size: 1.1rem;
   }
 }
+.bold-text3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--black-color);
+  text-align: left;
+
+  @media screen and (min-width: 1920px) {
+    font-size: 1.6rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 0.9rem;
+  }
+}
 
 .app__social {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 3rem;
 
   padding: 1rem;
 
@@ -135,7 +150,7 @@
     height: 40px;
     border-radius: 50%;
     background-color: var(--white-color);
-    margin: 0.25rem 0;
+    margin: 0.25rem 0rem;
     border: 1px solid var(--lightGray-color);
 
     display: flex;
@@ -159,7 +174,7 @@
       }
     }
 
-    @media screen and (min-width: 2000px) {
+    @media screen and (min-width: 1920px) {
       width: 70px;
       height: 70px;
 

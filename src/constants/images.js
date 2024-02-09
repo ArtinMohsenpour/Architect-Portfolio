@@ -27,6 +27,8 @@ import profile from "../assets/profile.png";
 import hello from "../assets/hello.png"
 import circle from "../assets/circle.svg";
 import logo from "../assets/logo.png";
+import arrowdown from "../assets/arrowdown.png";
+
 
 import adidas from "../assets/adidas.png";
 import amazon from "../assets/amazon.png";
@@ -37,6 +39,7 @@ import skype from "../assets/skype.png";
 import spotify from "../assets/spotify.png";
 
 export default {
+  arrowdown,
   email,
   mobile,
   hello,
