@@ -16,6 +16,40 @@ const Skills = () => {
   const [desc, setDesc] = useState("");
   const [companyName, setCompanyName] = useState("");
 
+  //
+  const skillsArray = [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "React",
+    "redux",
+    "hooks",
+    "Rest APIs",
+    "TypeScript",
+    "Python",
+    "JQUERY",
+    "Next.js",
+    "Three.js",
+    "Git, GitHub",
+    "Datatypes",
+    "Bootstrap",
+    "SASS",
+    "Tailwind",
+    "Figma",
+    "Adobe XD",
+    "UI",
+  ];
+  const softSkills = [
+    "Responsive Design",
+    "Communication",
+    "E-Commerce",
+    "Problem-Solving",
+    "Team Collaboration",
+    "Time Management",
+    "Attention to Detail",
+    "Accountability",
+  ];
+  //
   const toggleDes = (desc, workCompany) => {
     setDesc(desc);
     setIsOpen(!isOpen);
@@ -72,19 +106,43 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
-        <motion.div className="app__skills-list">
-          {skills.map((skill) => (
-            <motion.div
-              whileInView={{ opacity: [0, 1] }}
-              transition={{ duration: 0.5 }}
-              className="app__skills-item app__flex"
-              key={skill.name}
-            >
-              
-            
-            </motion.div>
-          ))}
-        </motion.div>
+        <div className="card__container">
+          <Tilt
+            whileInView={{ opacity: [0, 1] }}
+            transition={{ duration: 0.8 }}
+            className="card__container_card"
+          >
+            <h2>Skills</h2>
+            {skillsArray.map((skill) => (
+              <Tilt
+                whileInView={{ opacity: [0, 1] }}
+                transition={{ duration: 0.8 }}
+                key={skill}
+                className="card__container_item"
+              >
+                {skill}
+              </Tilt>
+            ))}
+          </Tilt>
+          <Tilt
+            whileInView={{ opacity: [0, 1] }}
+            transition={{ duration: 0.8 }}
+            className="card__container_card"
+          >
+            <h2>Soft Skills</h2>
+
+            {softSkills.map((skill) => (
+              <Tilt
+                whileInView={{ opacity: [0, 1] }}
+                transition={{ duration: 0.8 }}
+                key={skill}
+                className="card__container_item"
+              >
+                {skill}
+              </Tilt>
+            ))}
+          </Tilt>
+        </div>
         <div className="app__skills-exp">
           {experiences?.map((experience) => (
             <>

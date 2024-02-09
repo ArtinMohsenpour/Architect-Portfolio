@@ -136,6 +136,47 @@
   background-color: #cff2fb9a;
   padding: 1rem;
 }
+.card__container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  @media screen and (max-width: 450px) {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+.card__container_card {
+  display: flex;
+  width: 50%;
+  flex-wrap: wrap;
+  width: 25rem;
+  background-color: #edf2f8;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  margin: 2rem;
+  padding: 1rem;
+
+  h2 {
+    text-align: center;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 100%;
+    margin: 0rem;
+    margin-top: 1.2rem;
+  }
+}
+.card__container_item {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  background-color: #f9f9f9;
+  margin: 0.25rem;
+  padding: 0.18rem;
+  border-radius: 5px;
+}
 
 .bg__arrow {
   background-color: #cff2fb;
