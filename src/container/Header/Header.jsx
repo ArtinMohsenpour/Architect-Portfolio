@@ -17,39 +17,7 @@ const scaleVariants = {
 };
 
 const Header = () => (
-  <div className="app__header app__flex">
-    {/* <motion.div
-      whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-      transition={{ duration: 0.5 }}
-      className="app__header-info app__header-badge"
-    >
-      <Tilt>
-        <div className="app__header-badge">
-          <Tilt>
-            <div className="badge-cmp app__flex">
-              <span>
-                <img
-                  className="logo__container"
-                  src={images.hello}
-                  alt="profile_bg"
-                />
-              </span>
-              <div style={{ marginLeft: 20 }}>
-                <p className="p-text">My name is</p>
-                <h1 className="head-text">Abolfazl</h1>
-              </div>
-            </div>
-          </Tilt>
-          <Tilt>
-            <div className="tag-cmp app__flex ">
-              <p className="p-text">Frontend Web Developer</p>
-
-              <p className="p-text">UI designer</p>
-            </div>
-          </Tilt>
-        </div>
-      </Tilt>
-    </motion.div> */}
+  <div className="app__header app__flex wrapper__scroll">
     <motion.div
       whileInView={{ x: [-100, 0], opacity: [0, 1] }}
       transition={{ duration: 0.5 }}
@@ -58,10 +26,10 @@ const Header = () => (
       <Tilt className="app__header-badge">
         <Tilt className="badge-cmp app__flex">
           <img
-                  className="logo__container"
-                  src={images.hello}
-                  alt="profile_bg"
-                />
+            className="logo__container"
+            src={images.hello}
+            alt="profile_bg"
+          />
           <div style={{ marginLeft: 20 }}>
             <p className="p-text">My name is</p>
             <h1 className="head-text">Abolfazl</h1>

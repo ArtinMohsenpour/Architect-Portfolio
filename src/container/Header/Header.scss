@@ -52,63 +52,6 @@
   }
 }
 
-// .app__header-badge {
-//   width: 100%;
-//   display: flex;
-//   justify-content: flex-end;
-//   align-items: flex-end;
-//   flex-direction: column;
-//   .logo__container {
-//     width: 6rem;
-//     margin: 0;
-//   }
-//   .badge-cmp {
-//     padding: 1rem 1rem 0rem 1rem;
-//     margin-bottom: 0;
-//     background: var(--white-color);
-//     border-radius: 15px;
-//     flex-direction: row;
-//     width: auto;
-
-//     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-//   }
-
-//   .tag-cmp {
-//     padding: 0.5rem 1rem 0.5rem 1rem;
-//     margin-bottom: 0;
-//     background: var(--white-color);
-//     border-radius: 15px;
-//     flex-direction: row;
-//     width: auto;
-
-//     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-//   }
-
-//   .tag-cmp {
-//     flex-direction: column;
-//     margin-top: 3rem;
-
-//     p {
-//       width: 100%;
-//       text-transform: capitalize;
-//       text-align: left;
-//       font-size: 1.1rem;
-//     }
-//   }
-
-//   span {
-//     font-size: 3.5rem;
-
-//     @media screen and (min-width: 1920px) {
-//       font-size: 5rem;
-//     }
-//   }
-
-//   @media screen and (max-width: 1200px) {
-//     justify-content: flex-start;
-//     align-items: flex-start;
-//   }
-// }
 
 .app__header-badge {
   width: 100%;
@@ -227,6 +170,16 @@
     }
   }
 }
+.image-container {
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  margin: 20px;
+  box-shadow: 1 15px 15px 15px rgba(142, 0, 142, 0.5);
+  animation: imageAnimate 5s ease-in-out infinite;
+  transition: all 1s ease-in-out;
+}
 
 .app__header-img {
   flex: 1;
@@ -250,9 +203,31 @@
     right: 0;
     bottom: 0;
     z-index: 0;
-    width: 100%;
-    height: 90%;
+    width: 500px;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 1 25px 25px 25px rgba(142, 0, 142, 0.5);
+    animation: imageAnimate 5s ease-in-out infinite;
+    transition: all 3s ease-in-out;
   }
+  @keyframes imageAnimate {
+    0%,
+    100% {
+      border-radius: 100% 80% 60% 70% / 90% 70% 60% 90%;
+      transform: rotate(0deg);
+    }
+    25%,
+    75% {
+      border-radius: 100% 50% 50% 95% / 95% 85% 85% 90%;
+      transform: rotate(45deg);
+    }
+    50% {
+      border-radius: 100% 80% 60% 70% / 90% 70% 60% 90%;
+      transform: rotate(90deg);
+    }
+  }
+
   .blur__effect {
     display: flex;
     position: absolute;

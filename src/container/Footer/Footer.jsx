@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+
+import emailjs from "@emailjs/browser";
 
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
@@ -38,6 +40,37 @@ const Footer = () => {
         setIsFormSubmitted(true);
       })
       .catch((err) => console.log(err));
+    console.log(formData.username, formData.email);
+    emailjs
+      .send(
+        "service_rc9xl6i",
+        "template_rgyifvd",
+        {
+          from_name: formData.username,
+          to_name: "Artin Mohsenpour",
+          from_email: formData.email,
+          to_email: "mohsenpour.artin@gmail.com",
+          message: formData.message,
+        },
+        "jPRuJe3He7nzRO1AK"
+      )
+      .then(
+        () => {
+          setLoading(false);
+
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+          });
+        },
+        (error) => {
+          setLoading(false);
+          console.error(error);
+
+          alert("Ahh, something went wrong. Please try again.");
+        }
+      );
   };
 
   return (
@@ -95,9 +128,15 @@ const Footer = () => {
         </div>
       ) : (
         <div>
-          <h3 className="head-text">Thank you for getting in touch!</h3>
+          <h3 className="head-text2">Thank you for getting in touch!</h3>
         </div>
       )}
+
+      <div>
+        <div>
+          
+        </div>
+      </div>
     </>
   );
 };
