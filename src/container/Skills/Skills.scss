@@ -9,7 +9,7 @@
   margin-top: 3rem;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
   @media screen and (max-width: 1920px) {
     width: 80%;
@@ -56,7 +56,7 @@
       box-shadow: 0 0 25px #fef4f5;
     }
 
-    @media screen and (min-width: 2000px) {
+    @media screen and (min-width: 1920px) {
       width: 150px;
       height: 150px;
     }
@@ -72,7 +72,7 @@
     margin-top: 0.5rem;
   }
 
-  @media screen and (min-width: 2000px) {
+  @media screen and (min-width: 1920px) {
     margin: 1rem 2rem;
 
     p {
@@ -140,41 +140,83 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   @media screen and (max-width: 450px) {
     justify-content: center;
     flex-direction: column;
   }
+  @media screen and (max-width: 1280px) {
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1rem;
+  margin-bottom: 1rem;
+  }
+  @media screen and (min-width: 1920px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
 }
 .card__container_card {
   display: flex;
-  width: 50%;
   flex-wrap: wrap;
-  width: 25rem;
+  width: 100%;
   background-color: #edf2f8;
   align-items: center;
   justify-content: center;
   border-radius: 1rem;
   margin: 2rem;
   padding: 1rem;
-
+  &:hover {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  }
   h2 {
     text-align: center;
     width: 100%;
+
+    font-size: 2.5rem;
+
+    @media screen and (min-width: 1920px) {
+      font-size: 3rem;
+    }
   }
 
-  @media screen and (max-width: 450px) {
+  div{
+    font-size: 1rem;
+    @media screen and (min-width: 1920px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+    width: 70%;
+
+    align-self: center;
+  }
+
+  @media screen and (max-width: 920px) {
     width: 100%;
-    margin: 0rem;
+
     margin-top: 1.2rem;
+  }
+
+  @media screen and (min-width: 1920px) {
+    width: 40%;
+
+    margin-top: 1.2rem;
+    margin: 1rem;
   }
 }
 .card__container_item {
   display: flex;
   position: relative;
   flex-direction: row;
-  background-color: #f9f9f9;
+  background-color: #f9f9f985;
   margin: 0.25rem;
   padding: 0.18rem;
+  padding-inline: 0.48rem;
   border-radius: 5px;
 }
 
@@ -221,7 +263,7 @@
   line-height: 1.5 !important;
   opacity: 1 !important;
 
-  @media screen and (min-width: 2000px) {
+  @media screen and (min-width: 1920px) {
     font-size: 1.75rem !important;
     max-width: 500px !important;
     line-height: 2 !important;

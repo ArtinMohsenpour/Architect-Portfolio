@@ -107,9 +107,10 @@ const Skills = () => {
           ))}
         </motion.div>
         <div className="card__container">
-          <Tilt
-            whileInView={{ opacity: [0, 1] }}
-            transition={{ duration: 0.8 }}
+          <motion.div
+            whileInView={{ opacity: 1 }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.5, type: "tween" }}
             className="card__container_card"
           >
             <h2>Skills</h2>
@@ -120,13 +121,14 @@ const Skills = () => {
                 key={skill}
                 className="card__container_item"
               >
-                {skill}
+                <span className="p-text">{skill}</span>
               </Tilt>
             ))}
-          </Tilt>
-          <Tilt
-            whileInView={{ opacity: [0, 1] }}
-            transition={{ duration: 0.8 }}
+          </motion.div>
+          <motion.div
+            whileInView={{ opacity: 1 }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.5, type: "tween" }}
             className="card__container_card"
           >
             <h2>Soft Skills</h2>
@@ -138,10 +140,10 @@ const Skills = () => {
                 key={skill}
                 className="card__container_item"
               >
-                {skill}
+                <span className="p-text">{skill}</span>
               </Tilt>
             ))}
-          </Tilt>
+          </motion.div>
         </div>
         <div className="app__skills-exp">
           {experiences?.map((experience) => (
@@ -192,7 +194,14 @@ const Skills = () => {
                   key={experience.year}
                   className={`${isOpen ? "" : "hidden"} p-text2`}
                 >
-                  <Tilt className="desc__container">{desc}</Tilt>
+                  <motion.div
+                    whileInView={{ opacity: 1 }}
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.5, type: "tween" }}
+                    className="desc__container"
+                  >
+                    {desc}
+                  </motion.div>
                 </motion.div>
               ) : (
                 ""
