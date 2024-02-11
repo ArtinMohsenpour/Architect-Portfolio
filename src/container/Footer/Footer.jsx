@@ -133,8 +133,8 @@ const Footer = () => {
       )}
 
       <div>
-        <div>
-
+        <div className="container">
+          <p>&copy; 2024 Abolfazl Mohsenpour. All Rights Reserved.</p>
         </div>
       </div>
     </>
