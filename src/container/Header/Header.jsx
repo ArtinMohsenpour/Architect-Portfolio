@@ -17,7 +17,7 @@ const scaleVariants = {
 };
 
 const Header = () => (
-  <div className="app__header app__flex wrapper__scroll">
+  <div className="app__header app__flex">
     <motion.div
       whileInView={{ x: [-100, 0], opacity: [0, 1] }}
       transition={{ duration: 0.5 }}
@@ -54,11 +54,11 @@ const Header = () => (
       <motion.img
         whileInView={{ scale: [0, 1] }}
         transition={{ duration: 1, ease: "easeInOut" }}
-        src={images.circle}
+        src={images.rect}
         alt="profile_circle"
         className="overlay_circle"
       />
-      <div className="blur__effect"></div>
+      <div className="blur__effect "></div>
     </motion.div>
 
     <motion.div

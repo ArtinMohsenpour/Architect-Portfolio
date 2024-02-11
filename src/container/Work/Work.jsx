@@ -111,8 +111,8 @@ const Work = () => {
 
   return (
     <>
-      <h2 className="head-text">
-        My Creative <span>Project</span> Section
+      <h2 className="head-text ">
+        My Creative <span className="scroll__rotate">Project</span> Section
       </h2>
 
       <div className="app__work-filter">

@@ -12,6 +12,40 @@
   margin-top: 2rem;
 }
 
+.text__scroll_left {
+  //transform: translateX(-20px) scale(2);
+
+  left: 0;
+  /* Adjust as needed */
+  animation: movingText linear;
+  animation-timeline: scroll();
+}
+.text__scroll_right {
+  //transform: translateX(-20px) scale(2);
+
+  right: 0;
+  /* Adjust as needed */
+  animation: movingText2 linear;
+  animation-timeline: scroll();
+}
+
+@keyframes movingText {
+  0% {
+    transform: translateX(-300px);
+  }
+  14% {
+    transform: translateX(0);
+  }
+}
+@keyframes movingText2 {
+  0% {
+    transform: translateX(300px);
+  }
+  14% {
+    transform: translateX(0);
+  }
+}
+
 .app__profile-item {
   width: 260px;
   display: flex;

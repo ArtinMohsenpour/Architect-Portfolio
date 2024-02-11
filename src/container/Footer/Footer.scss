@@ -7,6 +7,18 @@
     flex-direction: column;
   }
 }
+.scroll__scale {
+  animation: scaleText linear;
+  animation-timeline: scroll();
+}
+@keyframes scaleText {
+  80% {
+    scale: 10%;
+  }
+  100% {
+    scale: 100%;
+  }
+}
 
 .app__footer-cards {
   width: 60%;
