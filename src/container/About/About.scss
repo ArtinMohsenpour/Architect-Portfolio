@@ -29,6 +29,10 @@
   animation-timeline: scroll();
 }
 
+.black__span {
+  color: black !important;
+}
+
 @keyframes movingText {
   0% {
     transform: translateX(-300px);

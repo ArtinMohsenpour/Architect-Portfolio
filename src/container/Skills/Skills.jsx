@@ -99,10 +99,17 @@ const Skills = () => {
               <Tilt
                 className="app__flex"
                 style={{ backgroundColor: skill.bgColor }}
+                key={skill.name}
               >
-                <img src={urlFor(skill.icon)} alt={skill.name} />
+                <img
+                  key={skill.name + `${Math.random() * 100}`}
+                  src={urlFor(skill.icon)}
+                  alt={skill.name}
+                />
               </Tilt>
-              <p className="p-text">{skill.name}</p>
+              <p key={skill.name + `${Math.random() * 100}`} className="p-text">
+                {skill.name}
+              </p>
             </motion.div>
           ))}
         </motion.div>
@@ -121,7 +128,9 @@ const Skills = () => {
                 key={skill}
                 className="card__container_item"
               >
-                <span className="p-text">{skill}</span>
+                <span key={skill} className="p-text">
+                  {skill}
+                </span>
               </Tilt>
             ))}
           </motion.div>
@@ -140,17 +149,19 @@ const Skills = () => {
                 key={skill}
                 className="card__container_item"
               >
-                <span className="p-text">{skill}</span>
+                <span key={skill} className="p-text">
+                  {skill}
+                </span>
               </Tilt>
             ))}
           </motion.div>
         </div>
         <div className="app__skills-exp">
           {experiences?.map((experience) => (
-            <>
+            <div key={experience.year + `${Math.random() * 100}`}>
               <motion.div
                 className="app__skills-exp-item"
-                key={experience.year}
+                key={experience.year + `${Math.random() * 100}`}
               >
                 <div className="app__skills-exp-year">
                   <p className="bold-text3" key={experience.year}>
@@ -159,29 +170,27 @@ const Skills = () => {
                 </div>
                 <motion.div className="app__skills-exp-works">
                   {experience?.works?.map((work) => (
-                    <>
-                      <motion.div
-                        whileInView={{ opacity: [0, 1] }}
-                        transition={{ duration: 0.5 }}
-                        className="app__skills-exp-work"
-                        data-tip
-                        data-for={work.name}
-                        key={work.name}
+                    <motion.div
+                      whileInView={{ opacity: [0, 1] }}
+                      transition={{ duration: 0.5 }}
+                      className="app__skills-exp-work"
+                      data-tip
+                      data-for={work.name}
+                      key={work.name + `${Math.random() * 100}`}
+                    >
+                      <h4 className="bold-text">{work.name}</h4>
+                      <div
+                        className="container__arrow"
+                        onClick={() => toggleDes(work.desc, work.company)}
                       >
-                        <h4 className="bold-text">{work.name}</h4>
-                        <div
-                          className="container__arrow"
-                          onClick={() => toggleDes(work.desc, work.company)}
-                        >
-                          <p className="p-text">{work.company}</p>
-                          <img
-                            className={`arrow__down ${isOpen && "bg__arrow"}`}
-                            src={images.arrowdown}
-                            alt="arrow"
-                          />
-                        </div>
-                      </motion.div>
-                    </>
+                        <p className="p-text">{work.company}</p>
+                        <img
+                          className={`arrow__down ${isOpen && "bg__arrow"}`}
+                          src={images.arrowdown}
+                          alt="arrow"
+                        />
+                      </div>
+                    </motion.div>
                   ))}
                 </motion.div>
               </motion.div>
@@ -206,7 +215,7 @@ const Skills = () => {
               ) : (
                 ""
               )}
-            </>
+            </div>
           ))}
         </div>
       </div>

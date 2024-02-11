@@ -86,22 +86,12 @@ const Work = () => {
 
     setTimeout(() => {
       setAnimateCard([{ y: 0, opacity: 1 }]);
-
+      console.log(item);
       if (item === "All") {
-        const newWorks = works.filter((work) => {
-          // console.log(work.tags);
-          const array1 = work.tags.includes("React");
-          const array2 = [...array1, ...works].filter((item, index) => {
-            return [...array1, ...works].indexOf(item) === index;
-          });
-          console.log(array2);
-          return array2;
-        });
-        setFilterWork(newWorks);
+        setFilterWork(works);
       } else {
         setFilterWork(
           works.filter((work) => {
-            // console.log(work.tags);
             return work.tags.includes(item);
           })
         );

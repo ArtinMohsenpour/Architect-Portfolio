@@ -19,11 +19,11 @@ const About = () => {
   return (
     <>
         <div className="head-text text__scroll_left ">
-          <l className="">I Know that</l> <span>Good Design</span>{" "}
+          <span className="black__span">I Know that</span> <span>Good Design</span>{" "}
           <br />
         </div>
         <div className="head-text text__scroll_right">
-          <l className="">means</l> <span>Good Business</span>
+        <span className="black__span">means</span> <span>Good Business</span>
         </div>
       <div className="wrapper__scroll">
         <div className="app__profiles">

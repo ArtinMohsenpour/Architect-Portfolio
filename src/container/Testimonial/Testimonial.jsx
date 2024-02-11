@@ -21,12 +21,10 @@ const Testimonial = () => {
 
     client.fetch(query).then((data) => {
       setTestimonials(data);
-      console.log(data);
     });
 
     client.fetch(brandsQuery).then((data) => {
       setBrands(data);
-      console.log(data);
     });
   }, []);
 
