@@ -17,66 +17,15 @@ const Work = () => {
     const query = '*[_type == "works"]';
 
     client.fetch(query).then((data) => {
-      const array1 = data.map((work) => {
-        if (work.tags.includes("React")) return work;
-        return;
-      });
+      const array1 = data.filter((work) => work.tags.includes("React"));
+      const array2 = [...array1, ...data].filter(
+        (item, index, self) => self.indexOf(item) === index
+      );
 
-      const array2 = [...array1, ...data].filter((item) => item !== undefined);
-
-      const array3 = array2.filter((item, index) => {
-        return array2.indexOf(item) === index;
-      });
-
-      // setFilterWork(newWorks);
-      // console.log(data);
-      setWorks(array3);
-      setFilterWork(array3);
+      setWorks(array2);
+      setFilterWork(array2);
     });
   }, []);
-
-  // useEffect(() => {
-  //   if (works.length > 1) {
-  //     const timeoutId = setTimeout(sortData, 2000);
-  //     return () => clearTimeout(timeoutId);
-  //   }
-  // }, [sorted]);
-
-  // //
-  // const sortData = () => {
-  //   {
-  //     works && console.log("works");
-  //     const firstSorted = works.map((work) => {
-  //       if (work.tags.includes("E-commerce")) return work;
-  //       return;
-  //     });
-  //     console.log(firstSorted);
-  //     const secondSorted = works.map((work) => {
-  //       if (work.tags.includes("React")) return work;
-  //       return;
-  //     });
-  //     console.log(secondSorted);
-  //     const thirdSorted = works.map((work) => {
-  //       if (work.tags.includes("JavaScript")) return work;
-  //       return;
-  //     });
-  //     console.log(thirdSorted);
-
-  //     const sortedWorks = [
-  //       ...firstSorted,
-  //       ...secondSorted,
-  //       ...thirdSorted,
-  //     ].filter((item) => item !== undefined);
-  //     const sortedWorks2 = sortedWorks.filter((item, index) => {
-  //       // Return true only for the first occurrence of each item
-  //       return sortedWorks.indexOf(item) === index;
-  //     });
-
-  //     console.log(sortedWorks2);
-  //     setWorks(sortedWorks2);
-  //     setSorted(true);
-  //   }
-  // };
 
   //
   const handleWorkFilter = (item) => {
