@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import * as ReactTooltip from "react-tooltip";
-import { Tooltip } from "react-tooltip";
 import { images } from "../../constants";
 import { Tilt } from "react-tilt";
 
@@ -60,23 +58,25 @@ const Skills = () => {
     const query = '*[_type == "experiences"]';
     const skillsQuery = '*[_type == "skills"]';
 
-    client.fetch(query).then((data) => {
-      let array1 = [];
-      [
-        "Frontend Web Developer",
-        "UI Design Internship",
-        "Internship for bachelor degree",
-        "Student Consultant",
-      ].map((item) => {
-        data.map((el) => {
-          {
-            el.works[0].name == item && array1.push(el);
-          }
-        });
-      });
+    (async () => {
+      try {
+        const data = await client.fetch(query);
+        const itemsToFind = [
+          "Frontend Web Developer",
+          "UI Design Internship",
+          "Internship for bachelor degree",
+          "Student Consultant",
+        ];
 
-      setExperiences(array1);
-    });
+        const filteredExperiences = data.filter((el) =>
+          itemsToFind.includes(el.works[0]?.name)
+        );
+
+        setExperiences(filteredExperiences);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    })();
 
     client.fetch(skillsQuery).then((data) => {
       setSkills(data);
