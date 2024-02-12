@@ -104,8 +104,10 @@
 
 .app__skills-exp-works {
   flex: 1;
+  width: 100%;
 
   .app__skills-exp-work {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -130,8 +132,9 @@
 }
 .desc__container {
   width: 100%;
+  align-self: center;
+  justify-content: right;
   margin-bottom: 2rem;
-  margin-left: 0.5rem;
   border-radius: 5px;
   background-color: #cff2fb9a;
   padding: 1rem;
@@ -150,7 +153,7 @@
     justify-content: center;
     flex-direction: column;
     margin-top: 1rem;
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
   }
   @media screen and (min-width: 1920px) {
     display: flex;
@@ -183,7 +186,7 @@
     }
   }
 
-  div{
+  div {
     font-size: 1rem;
     @media screen and (min-width: 1920px) {
       font-size: 1.8rem;
@@ -228,14 +231,15 @@
 .container__arrow {
   width: 100%;
   display: flex;
-  position: relative;
   flex-direction: row;
-  text-align: right;
   justify-content: space-between;
+  align-items: center;
 
   img {
     width: 25px;
     height: 25px;
+    position: absolute;
+    right: 10%;
   }
 }
 

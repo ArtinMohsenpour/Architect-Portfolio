@@ -58,25 +58,49 @@ const Skills = () => {
     const query = '*[_type == "experiences"]';
     const skillsQuery = '*[_type == "skills"]';
 
-    (async () => {
-      try {
-        const data = await client.fetch(query);
-        const itemsToFind = [
-          "Frontend Web Developer",
-          "UI Design Internship",
-          "Internship for bachelor degree",
-          "Student Consultant",
-        ];
+    // (async () => {
+    //   try {
+    //     const data = await client.fetch(query);
+    //     const itemsToFind = [
+    //       "Frontend Web Developer",
+    //       "UI Design Internship",
+    //       "Internship for bachelor degree",
+    //       "Student Consultant",
+    //     ];
 
-        const filteredExperiences = data.filter((el) =>
-          itemsToFind.includes(el.works[0]?.name)
+    //     const filteredExperiences = data.filter((el) =>
+    //       itemsToFind.includes(el.works[0]?.name)
+    //     );
+    //     console.log(filteredExperiences);
+    //     setExperiences(filteredExperiences);
+    //   } catch (error) {
+    //     console.error("Error fetching data:", error);
+    //   }
+    // })();
+
+    client.fetch(query).then((data) => {
+      const itemsToFind = [
+        "Frontend Web Developer",
+        "Student Work",
+        "UI Design Internship",
+        "Internship for bachelor degree",
+        "Student Consultant",
+      ];
+
+      const array1 = data.filter((el) =>
+        itemsToFind.includes(el.works[0]?.name)
+      );
+
+      // Sort array1 based on the order of itemsToFind
+      array1.sort((a, b) => {
+        return (
+          itemsToFind.indexOf(a.works[0]?.name) -
+          itemsToFind.indexOf(b.works[0]?.name)
         );
+      });
 
-        setExperiences(filteredExperiences);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    })();
+      setExperiences(array1);
+    });
 
     client.fetch(skillsQuery).then((data) => {
       setSkills(data);
@@ -171,12 +195,12 @@ const Skills = () => {
                 <motion.div className="app__skills-exp-works">
                   {experience?.works?.map((work) => (
                     <motion.div
+                      key={`${work.name}-${Math.random() * 100}`}
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}
                       className="app__skills-exp-work"
                       data-tip
                       data-for={work.name}
-                      key={work.name + `${Math.random() * 100}`}
                     >
                       <h4 className="bold-text">{work.name}</h4>
                       <div
@@ -185,7 +209,11 @@ const Skills = () => {
                       >
                         <p className="p-text">{work.company}</p>
                         <img
-                          className={`arrow__down ${isOpen && "bg__arrow"}`}
+                          className={`arrow__down ${
+                            isOpen &&
+                            companyName === work.company &&
+                            "bg__arrow"
+                          }`}
                           src={images.arrowdown}
                           alt="arrow"
                         />
@@ -201,16 +229,11 @@ const Skills = () => {
                   data-tip
                   data-for={experience.year}
                   key={experience.year}
-                  className={`${isOpen ? "" : "hidden"} p-text2`}
+                  className={`${
+                    isOpen ? "" : "hidden"
+                  } p-text2 desc__container`}
                 >
-                  <motion.div
-                    whileInView={{ opacity: 1 }}
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.5, type: "tween" }}
-                    className="desc__container"
-                  >
-                    {desc}
-                  </motion.div>
+                  {desc}
                 </motion.div>
               ) : (
                 ""
