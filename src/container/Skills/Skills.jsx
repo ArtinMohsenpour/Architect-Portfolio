@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { images } from "../../constants";
 import { Tilt } from "react-tilt";
+import { images } from "../../constants";
 
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
@@ -48,6 +48,14 @@ const Skills = () => {
     "Accountability",
   ];
   //
+  const itemsToFind = [
+    "Frontend Web Developer",
+    "Student Work",
+    "UI Design Internship",
+    "Internship for bachelor degree",
+    "Student Consultant",
+  ];
+
   const toggleDes = (desc, workCompany) => {
     setDesc(desc);
     setIsOpen(!isOpen);
@@ -55,56 +63,37 @@ const Skills = () => {
   };
 
   useEffect(() => {
-    const query = '*[_type == "experiences"]';
-    const skillsQuery = '*[_type == "skills"]';
-
-    // (async () => {
-    //   try {
-    //     const data = await client.fetch(query);
-    //     const itemsToFind = [
-    //       "Frontend Web Developer",
-    //       "UI Design Internship",
-    //       "Internship for bachelor degree",
-    //       "Student Consultant",
-    //     ];
-
-    //     const filteredExperiences = data.filter((el) =>
-    //       itemsToFind.includes(el.works[0]?.name)
-    //     );
-    //     console.log(filteredExperiences);
-    //     setExperiences(filteredExperiences);
-    //   } catch (error) {
-    //     console.error("Error fetching data:", error);
-    //   }
-    // })();
-
-    client.fetch(query).then((data) => {
-      const itemsToFind = [
-        "Frontend Web Developer",
-        "Student Work",
-        "UI Design Internship",
-        "Internship for bachelor degree",
-        "Student Consultant",
-      ];
-
-      const array1 = data.filter((el) =>
-        itemsToFind.includes(el.works[0]?.name)
-      );
-
-      // Sort array1 based on the order of itemsToFind
-      array1.sort((a, b) => {
-        return (
-          itemsToFind.indexOf(a.works[0]?.name) -
-          itemsToFind.indexOf(b.works[0]?.name)
+    const fetchExperiences = async () => {
+      try {
+        const data = await client.fetch('*[_type == "experiences"]');
+        const array1 = data.filter((el) =>
+          itemsToFind.includes(el.works[0]?.name)
         );
-      });
 
-      setExperiences(array1);
-    });
+        array1.sort((a, b) => {
+          return (
+            itemsToFind.indexOf(a.works[0]?.name) -
+            itemsToFind.indexOf(b.works[0]?.name)
+          );
+        });
 
-    client.fetch(skillsQuery).then((data) => {
-      setSkills(data);
-    });
+        setExperiences(array1);
+      } catch (error) {
+        console.error("Error fetching experiences data:", error);
+      }
+    };
+
+    const fetchSkills = async () => {
+      try {
+        const data = await client.fetch('*[_type == "skills"]');
+        setSkills(data);
+      } catch (error) {
+        console.error("Error fetching skills data:", error);
+      }
+    };
+
+    fetchExperiences();
+    fetchSkills();
   }, []);
 
   return (
@@ -115,15 +104,14 @@ const Skills = () => {
         <motion.div className="app__skills-list">
           {skills.map((skill) => (
             <motion.div
+              key={skill.name}
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
               className="app__skills-item app__flex"
-              key={skill.name}
             >
               <Tilt
                 className="app__flex"
                 style={{ backgroundColor: skill.bgColor }}
-                key={skill.name}
               >
                 <img
                   key={skill.name + `${Math.random() * 100}`}
@@ -139,43 +127,38 @@ const Skills = () => {
         </motion.div>
         <div className="card__container">
           <motion.div
+            className="card__container_card"
             whileInView={{ opacity: 1 }}
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.5, type: "tween" }}
-            className="card__container_card"
           >
             <h2>Skills</h2>
             {skillsArray.map((skill) => (
               <Tilt
+                key={skill}
                 whileInView={{ opacity: [0, 1] }}
                 transition={{ duration: 0.8 }}
-                key={skill}
                 className="card__container_item"
               >
-                <span key={skill} className="p-text">
-                  {skill}
-                </span>
+                <span className="p-text">{skill}</span>
               </Tilt>
             ))}
           </motion.div>
           <motion.div
+            className="card__container_card"
             whileInView={{ opacity: 1 }}
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.5, type: "tween" }}
-            className="card__container_card"
           >
             <h2>Soft Skills</h2>
-
             {softSkills.map((skill) => (
               <Tilt
+                key={skill}
                 whileInView={{ opacity: [0, 1] }}
                 transition={{ duration: 0.8 }}
-                key={skill}
                 className="card__container_item"
               >
-                <span key={skill} className="p-text">
-                  {skill}
-                </span>
+                <span className="p-text">{skill}</span>
               </Tilt>
             ))}
           </motion.div>
@@ -184,13 +167,11 @@ const Skills = () => {
           {experiences?.map((experience) => (
             <div key={experience.year + `${Math.random() * 100}`}>
               <motion.div
-                className="app__skills-exp-item"
                 key={experience.year + `${Math.random() * 100}`}
+                className="app__skills-exp-item"
               >
                 <div className="app__skills-exp-year">
-                  <p className="bold-text3" key={experience.year}>
-                    {experience.year}
-                  </p>
+                  <p className="bold-text3">{experience.year}</p>
                 </div>
                 <motion.div className="app__skills-exp-works">
                   {experience?.works?.map((work) => (
@@ -203,10 +184,7 @@ const Skills = () => {
                       data-for={work.name}
                     >
                       <h4 className="bold-text">{work.name}</h4>
-                      <div
-                        className="container__arrow"
-                        onClick={() => toggleDes(work.desc, work.company)}
-                      >
+                      <div className="container__arrow">
                         <p className="p-text">{work.company}</p>
                         <img
                           className={`arrow__down ${
@@ -216,27 +194,22 @@ const Skills = () => {
                           }`}
                           src={images.arrowdown}
                           alt="arrow"
+                          onClick={() => toggleDes(work.desc, work.company)}
                         />
                       </div>
                     </motion.div>
                   ))}
                 </motion.div>
               </motion.div>
-              {experience.works[0].company === companyName ? (
-                <motion.div
-                  whileInView={{ opacity: [0, 1] }}
-                  transition={{ duration: 0.9 }}
-                  data-tip
-                  data-for={experience.year}
+              {experience.works[0].company === companyName && (
+                <div
                   key={experience.year}
                   className={`${
                     isOpen ? "" : "hidden"
                   } p-text2 desc__container`}
                 >
                   {desc}
-                </motion.div>
-              ) : (
-                ""
+                </div>
               )}
             </div>
           ))}

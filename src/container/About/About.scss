@@ -19,6 +19,9 @@
   /* Adjust as needed */
   animation: movingText linear;
   animation-timeline: scroll();
+  @media screen and (max-width: 980px) {
+    animation: none;
+  }
 }
 .text__scroll_right {
   //transform: translateX(-20px) scale(2);
@@ -27,6 +30,9 @@
   /* Adjust as needed */
   animation: movingText2 linear;
   animation-timeline: scroll();
+  @media screen and (max-width: 980px) {
+    animation: none;
+  }
 }
 
 .black__span {
@@ -35,7 +41,7 @@
 
 @keyframes movingText {
   0% {
-    transform: translateX(-300px);
+    transform: translateX(-20%);
   }
   14% {
     transform: translateX(0);
@@ -43,7 +49,7 @@
 }
 @keyframes movingText2 {
   0% {
-    transform: translateX(300px);
+    transform: translateX(20%);
   }
   14% {
     transform: translateX(0);

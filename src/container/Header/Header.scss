@@ -212,11 +212,24 @@
     right: 0;
     bottom: 0;
     z-index: 0;
+    margin: 0;
+    padding: 0;
     margin-bottom: 2rem;
     width: 100%;
     height: 80%;
     animation: imageAnimate 5s ease-in-out infinite;
     transition: all 3s ease-in-out;
+    @media screen and (max-width: 980px) {
+      width: 80%;
+      height: 65%;
+      margin-bottom: 6rem;
+      margin-left: 2rem;
+      align-self: center;
+    }
+    @media screen and (min-width: 1920px) {
+      animation: imageAnimate2 5s ease-in-out infinite;
+      transition: all 3s ease-in-out;
+    }
   }
   @keyframes imageAnimate {
     0%,
@@ -231,6 +244,23 @@
     }
     50% {
       border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+      rotate: 45deg;
+    }
+  }
+
+  @keyframes imageAnimate2 {
+    0%,
+    100% {
+      border-radius: 80% 60% 50% 90% / 80% 50% 90% 60%;
+      rotate: 0deg;
+    }
+    25%,
+    75% {
+      border-radius: 70% 70% 70% 75% / 75% 65% 65% 80%;
+      rotate: 22.5deg;
+    }
+    50% {
+      border-radius: 50% 60% 70% 60% / 70% 60% 30% 60%;
       rotate: 45deg;
     }
   }
