@@ -68,7 +68,7 @@ const Header = () => (
     >
       {[images.redux, images.react, images.sass].map((circle, index) => (
         <Tilt className="circle-cmp app__flex" key={`circle-${index}`}>
-          <img src={circle} alt="profile_bg" />
+          <img src={circle} alt="profile background" />
         </Tilt>
       ))}
     </motion.div>
