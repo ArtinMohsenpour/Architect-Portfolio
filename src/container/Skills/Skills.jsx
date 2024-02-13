@@ -48,13 +48,6 @@ const Skills = () => {
     "Accountability",
   ];
   //
-  const itemsToFind = [
-    "Frontend Web Developer",
-    "Student Work",
-    "UI Design Internship",
-    "Internship for bachelor degree",
-    "Student Consultant",
-  ];
 
   const toggleDes = (desc, workCompany) => {
     setDesc(desc);
@@ -63,6 +56,13 @@ const Skills = () => {
   };
 
   useEffect(() => {
+    const itemsToFind = [
+      "Frontend Web Developer",
+      "Student Work",
+      "UI Design Internship",
+      "Internship for bachelor degree",
+      "Student Consultant",
+    ];
     const fetchExperiences = async () => {
       try {
         const data = await client.fetch('*[_type == "experiences"]');
@@ -94,7 +94,7 @@ const Skills = () => {
 
     fetchExperiences();
     fetchSkills();
-  }, [itemsToFind]);
+  }, []);
 
   return (
     <>
