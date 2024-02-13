@@ -13,10 +13,7 @@
 }
 
 .text__scroll_left {
-  //transform: translateX(-20px) scale(2);
-
   left: 0;
-  /* Adjust as needed */
   animation: movingText linear;
   animation-timeline: scroll();
   @media screen and (max-width: 980px) {
@@ -24,19 +21,12 @@
   }
 }
 .text__scroll_right {
-  //transform: translateX(-20px) scale(2);
-
   right: 0;
-  /* Adjust as needed */
   animation: movingText2 linear;
   animation-timeline: scroll();
   @media screen and (max-width: 980px) {
     animation: none;
   }
-}
-
-.black__span {
-  color: black !important;
 }
 
 @keyframes movingText {
@@ -54,6 +44,10 @@
   14% {
     transform: translateX(0);
   }
+}
+
+.black__span {
+  color: black !important;
 }
 
 .app__profile-item {
