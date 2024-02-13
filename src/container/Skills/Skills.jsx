@@ -94,7 +94,7 @@ const Skills = () => {
 
     fetchExperiences();
     fetchSkills();
-  }, []);
+  }, [itemsToFind]);
 
   return (
     <>
