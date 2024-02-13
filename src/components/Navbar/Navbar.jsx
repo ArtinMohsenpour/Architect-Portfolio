@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { images } from "../../constants/index";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import "./Navbar.scss";
 //
 
@@ -11,7 +12,9 @@ const Navbar = () => {
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
-        <img src={images.logo} alt="logo" />
+        <a href="#home">
+          <img src={images.logo} alt="logo" />
+        </a>
         <p className="p-text">Portfolio</p>
       </div>
       <ul className="app__navbar-links">
