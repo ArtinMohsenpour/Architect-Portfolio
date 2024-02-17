@@ -57,7 +57,7 @@
     a {
       color: var(--gray-color);
       text-decoration: none;
-      flex-direction: column;
+      flex-direction: row;
 
       text-transform: uppercase;
       font-weight: 500;
@@ -90,11 +90,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--secondary-color);
+  background-color: var(--gray-color);
 
   svg {
-    width: 70%;
-    height: 70%;
+    width: 1rem;
+    height: auto;
+    min-width: 20px;
     color: var(--white-color);
   }
 
@@ -174,4 +175,25 @@
   @media screen and (min-width: 900px) {
     display: none;
   }
+}
+
+.icon__container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.icon {
+  width: 15px;
+  height: auto;
+  margin-left: 5px;
+  vertical-align: middle; /* Add this line to align the image vertically */
+}
+
+.icon__container span {
+  display: inline-block; /* Ensure the span element is inline-block */
+}
+
+.HiX {
+  min-width: 20px;
 }

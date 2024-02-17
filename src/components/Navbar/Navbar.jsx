@@ -3,6 +3,8 @@ import { images } from "../../constants/index";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 import "./Navbar.scss";
+import resume from "../../assets/resume.pdf";
+import downloadIcon from "../../assets/download-icon.png";
 //
 
 const Navbar = () => {
@@ -30,6 +32,24 @@ const Navbar = () => {
               </li>
             );
           })}
+          <li role="button" className="app__flex p-text">
+            <div />
+            <a
+              className="icon__container"
+              href={resume}
+              download="resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setToggle(!toggle)}
+            >
+              Resume
+              <img
+                className="icon app__navbar-logo"
+                src={downloadIcon}
+                alt="download icon"
+              />
+            </a>
+          </li>
         </div>
       </ul>
 
@@ -41,7 +61,11 @@ const Navbar = () => {
             whileInView={{ x: [150, 0] }}
             transition={{ duration: 0.85, ease: "easeOut" }}
           >
-            <HiX onClick={() => setToggle(!toggle)} cursor="pointer" />
+            <HiX
+              className="HiX"
+              onClick={() => setToggle(!toggle)}
+              cursor="pointer"
+            />
             <ul className="app__navbar-links">
               {["home", "about", "work", "skills", "contact"].map((item) => {
                 return (
@@ -52,6 +76,23 @@ const Navbar = () => {
                   </li>
                 );
               })}
+              <li role="button" className="app__flex p-text">
+                <a
+                  className="icon__container"
+                  href={resume}
+                  download="Abolfazl-Mohsenpour-CV.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setToggle(!toggle)}
+                >
+                  Resume
+                  <img
+                    className="icon app__navbar-logo"
+                    src={downloadIcon}
+                    alt="download icon"
+                  />
+                </a>
+              </li>
             </ul>
           </motion.div>
         )}
