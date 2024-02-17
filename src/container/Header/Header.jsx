@@ -21,10 +21,10 @@ const Header = () => (
     <motion.div
       whileInView={{ x: [-100, 0], opacity: [0, 1] }}
       transition={{ duration: 0.5 }}
-      className="app__header-info"
+      className="app__header-info "
     >
-      <Tilt className="app__header-badge">
-        <Tilt className="badge-cmp app__flex">
+      <Tilt className="app__header-badge box__container">
+        <Tilt className="badge-cmp app__flex  shadow__1">
           <img
             className="logo__container"
             src={images.hello}
@@ -36,7 +36,7 @@ const Header = () => (
           </div>
         </Tilt>
 
-        <Tilt className="tag-cmp app__flex ">
+        <Tilt className="tag-cmp app__flex shadow__1">
           <p className="p-text">Frontend Web Developer</p>
 
           <p className="p-text">UI designer</p>
@@ -64,10 +64,10 @@ const Header = () => (
     <motion.div
       variants={scaleVariants}
       whileInView={scaleVariants.whileInView}
-      className="app__header-circles"
+      className="app__header-circles box__container"
     >
       {[images.redux, images.react, images.sass].map((circle, index) => (
-        <Tilt className="circle-cmp app__flex" key={`circle-${index}`}>
+        <Tilt className="circle-cmp app__flex shadow__1" key={`circle-${index}`}>
           <img src={circle} alt="profile background" />
         </Tilt>
       ))}

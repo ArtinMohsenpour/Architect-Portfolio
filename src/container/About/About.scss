@@ -83,3 +83,11 @@
     }
   }
 }
+.box__container .shadow__1 {
+  box-shadow: -15px -15px 15px rgba(45, 45, 45, 0.297),
+    15px 15px 15px rgba(0, 0, 0, 0.211);
+}
+.box__container .shadow__2 {
+  box-shadow: inset 4px 4px 5px rgb(255, 255, 255, 0.2),
+    inset -4px -4px 5px rgb(0, 0, 0, 0.1), 10px 40px 40px rgb(0, 0, 0, 0.1);
+}

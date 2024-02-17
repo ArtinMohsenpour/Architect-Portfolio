@@ -52,6 +52,10 @@
   }
 }
 
+.box__container {
+  position: relative;
+}
+
 .app__header-badge {
   width: 100%;
   display: flex;
@@ -67,7 +71,7 @@
   .badge-cmp,
   .tag-cmp {
     padding: 1rem 2rem;
-    background: var(--white-color);
+    background: #edf2f8;
     border-radius: 15px;
     flex-direction: row;
     width: auto;
@@ -313,4 +317,15 @@
     backdrop-filter: blur(3px);
     z-index: 5;
   }
+}
+
+.box__container .shadow__1 {
+  box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.1),
+    10px 10px 10px rgb(0, 0, 0, 0.1),
+    inset -10px -10px 10px rgb(255, 255, 255, 0.2),
+    inset 10px 10px 15px rgb(0, 0, 0, 0.1);
+}
+.box__container .shadow__2 {
+  box-shadow: inset 4px 4px 5px rgb(255, 255, 255, 0.2),
+    inset -4px -4px 5px rgb(0, 0, 0, 0.1), 10px 40px 40px rgb(0, 0, 0, 0.1);
 }

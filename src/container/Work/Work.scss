@@ -26,7 +26,6 @@
   100% {
     transform: rotate(0deg);
   }
- 
 }
 
 .app__work-filter {
@@ -178,4 +177,9 @@
     background-color: #fff;
     top: -25px;
   }
+}
+
+.shadow__2 {
+  box-shadow: inset 4px 4px 5px rgb(255, 255, 255, 0.2),
+    inset -4px -4px 5px rgb(0, 0, 0, 0.1), 10px 40px 40px rgb(0, 0, 0, 0.1);
 }

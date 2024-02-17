@@ -107,10 +107,10 @@ const Skills = () => {
               key={skill.name}
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
-              className="app__skills-item app__flex"
+              className="app__skills-item app__flex "
             >
               <Tilt
-                className="app__flex"
+                className="app__flex shadow__2"
                 style={{ backgroundColor: skill.bgColor }}
               >
                 <img
@@ -127,7 +127,7 @@ const Skills = () => {
         </motion.div>
         <div className="card__container">
           <motion.div
-            className="card__container_card"
+            className="card__container_card shadow__1"
             whileInView={{ opacity: 1 }}
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.5, type: "tween" }}
@@ -138,14 +138,14 @@ const Skills = () => {
                 key={skill}
                 whileInView={{ opacity: [0, 1] }}
                 transition={{ duration: 0.8 }}
-                className="card__container_item"
+                className="card__container_item shadow__2"
               >
                 <span className="p-text">{skill}</span>
               </Tilt>
             ))}
           </motion.div>
           <motion.div
-            className="card__container_card"
+            className="card__container_card shadow__1"
             whileInView={{ opacity: 1 }}
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.5, type: "tween" }}
@@ -156,7 +156,7 @@ const Skills = () => {
                 key={skill}
                 whileInView={{ opacity: [0, 1] }}
                 transition={{ duration: 0.8 }}
-                className="card__container_item"
+                className="card__container_item shadow__2"
               >
                 <span className="p-text">{skill}</span>
               </Tilt>
@@ -187,7 +187,7 @@ const Skills = () => {
                       <div className="container__arrow">
                         <p className="p-text">{work.company}</p>
                         <img
-                          className={`arrow__down ${
+                          className={`arrow__down  ${
                             isOpen &&
                             companyName === work.company &&
                             "bg__arrow"
