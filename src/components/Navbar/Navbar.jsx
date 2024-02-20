@@ -44,7 +44,7 @@ const Navbar = () => {
             >
               Resume
               <img
-                className="icon app__navbar-logo"
+                className="icon"
                 src={downloadIcon}
                 alt="download icon"
               />

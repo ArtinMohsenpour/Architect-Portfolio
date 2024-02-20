@@ -3,6 +3,8 @@ import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
 import leftArrow from "../../assets/left-arrow.png";
 import rightArrow from "../../assets/right-arrow.png";
+import portfolio from "../../assets/portfolio.pdf";
+import downloadIcon from "../../assets/download-icon.png";
 
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
@@ -12,8 +14,25 @@ const Work = () => {
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState("All");
-  //const [sorted, setSorted] = useState(false);
+  const [imgIndex, setImgIndex] = useState(1);
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
+
+  /////////////////////functions//////////////////
+
+  const showNextImage = () => {
+    if (imgIndex < 3) {
+      setImgIndex(imgIndex + 1);
+    } else {
+      return;
+    }
+  };
+  const showPrevImage = () => {
+    if (imgIndex > 1) {
+      setImgIndex(imgIndex - 1);
+    } else {
+      return;
+    }
+  };
 
   useEffect(() => {
     const query = '*[_type == "works"]';
@@ -69,6 +88,23 @@ const Work = () => {
             {item}
           </div>
         ))}
+        <div className="app__work-filter-item app__flex p-text shadow__2">
+          <a
+            className="icon__container p-text item-active2"
+            href={portfolio}
+            style={{ textDecoration: "none" }}
+            download="Abolfazl-Mohsenpour-CV.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Portfolio
+            <img
+              className="icon app__navbar-logo"
+              src={downloadIcon}
+              alt="download icon"
+            />
+          </a>
+        </div>
       </div>
 
       <motion.div
@@ -79,14 +115,28 @@ const Work = () => {
         {filterWork.map((work, index) => (
           <div className="app__work-item app__flex" key={index}>
             <div className="app__work-img app__flex">
-              <img
-                src={urlFor(work.imgUrl1)}
-                alt={`${work.name ? work.name : "image-work"}`}
-              />
-              <button className="swipper__left_button">
+              {imgIndex == 1 && (
+                <img
+                  src={urlFor(work.imgUrl1)}
+                  alt={`${work.name ? work.name : "image-work"}`}
+                />
+              )}
+              {imgIndex == 2 && (
+                <img
+                  src={urlFor(work.imgUrl2)}
+                  alt={`${work.name ? work.name : "image-work"}`}
+                />
+              )}
+              {imgIndex == 3 && (
+                <img
+                  src={urlFor(work.imgUrl3)}
+                  alt={`${work.name ? work.name : "image-work"}`}
+                />
+              )}
+              <button className="swipper__left_button" onClick={showPrevImage}>
                 <img src={leftArrow} />
               </button>
-              <button className="swipper__right_button">
+              <button className="swipper__right_button" onClick={showNextImage}>
                 <img src={rightArrow} />
               </button>
             </div>

@@ -51,13 +51,13 @@ const Header = () => (
     >
       <img className="image__blury " src={images.profile} alt="profile_bg" />
 
-      <motion.img
+      {/* <motion.img
         whileInView={{ scale: [0, 1] }}
         transition={{ duration: 1, ease: "easeInOut" }}
         src={images.rect}
         alt="profile_circle"
         className="overlay_circle"
-      />
+      /> */}
       <div className="blur__effect "></div>
     </motion.div>
 

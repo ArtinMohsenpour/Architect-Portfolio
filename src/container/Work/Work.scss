@@ -51,6 +51,9 @@
     &:hover {
       background-color: var(--secondary-color);
       color: #fff;
+      .item-active2 {
+        color: #fff;
+      }
     }
 
     @media screen and (min-width: 1920px) {
@@ -86,8 +89,13 @@
 
     &:hover {
       box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-      h4 {
-        background-color: aqua;
+
+      .app__work-tag {
+        background-color: var(--secondary-color);
+
+        p {
+          color: white;
+        }
       }
     }
 
@@ -208,6 +216,9 @@
   height: 40px;
   background: #ffffff85;
   z-index: 200;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+
   img {
     width: 20px;
     height: 20px;
@@ -220,10 +231,30 @@
   right: 0;
   width: 40px;
   height: 40px;
-  background: #ffffff8d;
+  background: #ffffffb3;
   z-index: 200;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
   img {
     width: 20px;
     height: 20px;
   }
+}
+
+.swipper__right_button:hover {
+  background: var(--secondary-color);
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+.swipper__left_button:hover {
+  background: var(--secondary-color);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.icon {
+  width: 25px;
+  height: auto;
+  margin-left: 5px;
+  vertical-align: middle; /* Add this line to align the image vertically */
 }
