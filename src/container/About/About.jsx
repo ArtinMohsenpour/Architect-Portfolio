@@ -19,7 +19,7 @@ const About = () => {
   return (
     <>
       <div className="head-text text__scroll_left ">
-        <span className="black__span">I Know that</span>{" "}
+        <span className="black__span">How can i know</span>{" "}
         <span>Good Design</span> <br />
       </div>
       <div className="head-text text__scroll_right">
