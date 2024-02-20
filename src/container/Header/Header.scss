@@ -1,9 +1,10 @@
 #home {
   position: relative;
-  background: url("../../assets/bgIMG.png");
+  background: url("../../assets/bgIMG.webp");
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
+  background-color: rgba(255, 255, 255, 0.593);
 
   // disable the default padding styles
   .app__wrapper {
@@ -71,7 +72,7 @@
   .badge-cmp,
   .tag-cmp {
     padding: 1rem 2rem;
-    background: #edf2f8;
+    background: #edf2f874;
     border-radius: 15px;
     flex-direction: row;
     width: auto;
@@ -315,7 +316,7 @@
     height: 1rem;
     margin-bottom: -10px;
     backdrop-filter: blur(3px);
-    z-index: 5;
+    z-index: 1;
   }
 }
 
@@ -326,6 +327,8 @@
     inset 10px 10px 15px rgb(0, 0, 0, 0.1);
 }
 .box__container .shadow__2 {
-  box-shadow: inset 4px 4px 5px rgb(255, 255, 255, 0.2),
-    inset -4px -4px 5px rgb(0, 0, 0, 0.1), 10px 40px 40px rgb(0, 0, 0, 0.1);
+  background: #edf2f874;
+  box-shadow: -15px -15px 15px rgb(0, 0, 0, 0.1),
+    15px 15px 15px rgb(0, 0, 0, 0.1), 15px -15px 15px rgb(0, 0, 0, 0.1),
+    -15px 15px 15px rgb(0, 0, 0, 0.1);
 }

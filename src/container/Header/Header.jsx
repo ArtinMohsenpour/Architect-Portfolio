@@ -23,25 +23,25 @@ const Header = () => (
       transition={{ duration: 0.5 }}
       className="app__header-info "
     >
-      <Tilt className="app__header-badge box__container">
+      <div className="app__header-badge box__container">
         <Tilt className="badge-cmp app__flex  shadow__1">
-          <img
+          {/* <img
             className="logo__container"
             src={images.hello}
             alt="profile_bg"
-          />
-          <div style={{ marginLeft: 20 }}>
-            <p className="p-text">My name is</p>
-            <h1 className="head-text">Abolfazl</h1>
+          /> */}
+          <div style={{ margin: 7, display: "flex" }}>
+            <p style={{ marginRight: 10}} className="p-text">My name is {" "}</p>
+            <h1 className="p-text"> Mina Kherad</h1>
           </div>
         </Tilt>
 
         <Tilt className="tag-cmp app__flex shadow__1">
-          <p className="p-text">Frontend Web Developer</p>
+          <p className="p-text">Architect and </p>
 
-          <p className="p-text">UI designer</p>
+          <p className="p-text">Facade Engineer</p>
         </Tilt>
-      </Tilt>
+      </div>
     </motion.div>
 
     <motion.div
@@ -67,7 +67,10 @@ const Header = () => (
       className="app__header-circles box__container"
     >
       {[images.redux, images.react, images.sass].map((circle, index) => (
-        <Tilt className="circle-cmp app__flex shadow__1" key={`circle-${index}`}>
+        <Tilt
+          className="circle-cmp app__flex shadow__1"
+          key={`circle-${index}`}
+        >
           <img src={circle} alt="profile background" />
         </Tilt>
       ))}

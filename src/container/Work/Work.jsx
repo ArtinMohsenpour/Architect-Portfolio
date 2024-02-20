@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
+import leftArrow from "../../assets/left-arrow.png";
+import rightArrow from "../../assets/right-arrow.png";
 
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
@@ -22,8 +24,9 @@ const Work = () => {
         (item, index, self) => self.indexOf(item) === index
       );
 
-      setWorks(array2);
-      setFilterWork(array2);
+      setWorks(data);
+      setFilterWork(data);
+      console.log(data);
     });
   }, []);
 
@@ -55,7 +58,7 @@ const Work = () => {
       </h2>
 
       <div className="app__work-filter">
-        {["JavaScript","TypeScript", "React", "E-commerce", "All"].map((item, index) => (
+        {["Architectural", "Facade", "All"].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
@@ -77,50 +80,15 @@ const Work = () => {
           <div className="app__work-item app__flex" key={index}>
             <div className="app__work-img app__flex">
               <img
-                src={urlFor(work.imgUrl)}
+                src={urlFor(work.imgUrl1)}
                 alt={`${work.name ? work.name : "image-work"}`}
               />
-
-              <motion.div
-                whileHover={{ opacity: [0, 1] }}
-                transition={{
-                  duration: 0.25,
-                  ease: "easeInOut",
-                  staggerChildren: 0.5,
-                }}
-                className="app__work-hover app__flex"
-              >
-                <a
-                  href={work.projectLink}
-                  aria-label="{work.name}"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <motion.div
-                    whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.9] }}
-                    transition={{ duration: 0.25 }}
-                    className="app__flex"
-                  >
-                    <AiFillEye />
-                  </motion.div>
-                </a>
-                <a
-                  href={work.codeLink}
-                  aria-label="{work.name}"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <motion.div
-                    whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.9] }}
-                    transition={{ duration: 0.25 }}
-                    className="app__flex"
-                  >
-                    <AiFillGithub />
-                  </motion.div>
-                </a>
-              </motion.div>
+              <button className="swipper__left_button">
+                <img src={leftArrow} />
+              </button>
+              <button className="swipper__right_button">
+                <img src={rightArrow} />
+              </button>
             </div>
 
             <div className="app__work-content app__flex">

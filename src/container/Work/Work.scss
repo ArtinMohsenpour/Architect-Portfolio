@@ -72,7 +72,8 @@
   align-items: center;
 
   .app__work-item {
-    width: 280px;
+    width: 380px;
+    height: auto;
     flex-direction: column;
 
     margin: 2rem;
@@ -81,11 +82,13 @@
     background-color: #fff;
     color: #000;
 
-    cursor: pointer;
     transition: all 0.3s ease;
 
     &:hover {
       box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+      h4 {
+        background-color: aqua;
+      }
     }
 
     @media screen and (min-width: 1920px) {
@@ -117,6 +120,10 @@
   @media screen and (min-width: 1920px) {
     height: 350px;
   }
+
+  :hover {
+    border-radius: 0;
+  }
 }
 
 .app__work-hover {
@@ -127,31 +134,36 @@
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  //background-color: rgba(0, 0, 0, 0.5);
 
-  border-radius: 0.5rem;
   opacity: 0;
   transition: all 0.3s ease;
 
-  div {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-
-    margin: 1rem;
-    font-family: var(--font-base);
-    font-weight: 800;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    svg {
-      width: 50%;
-      height: 50%;
-      color: var(--white-color);
-    }
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    object-fit: cover;
   }
+  // div {
+  //   width: 50px;
+  //   height: 50px;
+  //   border-radius: 50%;
+  //   background-color: rgba(0, 0, 0, 0.5);
+  //   color: #fff;
+
+  //   margin: 1rem;
+  //   font-family: var(--font-base);
+  //   font-weight: 800;
+  //   cursor: pointer;
+  //   transition: all 0.3s ease;
+
+  //   svg {
+  //     width: 50%;
+  //     height: 50%;
+  //     color: var(--white-color);
+  //   }
+  // }
 }
 
 .app__work-content {
@@ -166,6 +178,9 @@
 
     @media screen and (min-width: 1920px) {
       margin-top: 3rem;
+    }
+    :hover {
+      background-color: var(--primary-color);
     }
   }
 
@@ -182,4 +197,33 @@
 .shadow__2 {
   box-shadow: inset 4px 4px 5px rgb(255, 255, 255, 0.2),
     inset -4px -4px 5px rgb(0, 0, 0, 0.1), 10px 40px 40px rgb(0, 0, 0, 0.1);
+}
+
+.swipper__left_button {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  left: 0;
+  height: 40px;
+  background: #ffffff85;
+  z-index: 200;
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}
+.swipper__right_button {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: #ffffff8d;
+  z-index: 200;
+  img {
+    width: 20px;
+    height: 20px;
+  }
 }

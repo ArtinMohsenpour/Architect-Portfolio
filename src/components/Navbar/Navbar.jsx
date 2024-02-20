@@ -16,7 +16,7 @@ const Navbar = () => {
         <a href="#home">
           <img src={images.logo} alt="logo" />
         </a>
-        <p className="p-text">Portfolio</p>
+        <p className="p-text"> Portfolio</p>
       </div>
       <ul className="app__navbar-links">
         <div className="app__flex link__container">
@@ -66,11 +66,15 @@ const Navbar = () => {
               onClick={() => setToggle(!toggle)}
               cursor="pointer"
             />
-            <ul className="app__navbar-links">
+            <ul className="app__navbar-links ">
               {["home", "about", "work", "skills", "contact"].map((item) => {
                 return (
-                  <li key={`${item}`} role="button">
-                    <a href={`#${item}`} onClick={() => setToggle(!toggle)}>
+                  <li key={`${item}`} role="button " >
+                    <a
+                      href={`#${item}`}
+                      onClick={() => setToggle(!toggle)}
+                      className="p-text"
+                    >
                       {item}
                     </a>
                   </li>
@@ -78,7 +82,7 @@ const Navbar = () => {
               })}
               <li role="button" className="app__flex p-text">
                 <a
-                  className="icon__container"
+                  className="icon__container p-text"
                   href={resume}
                   download="Abolfazl-Mohsenpour-CV.pdf"
                   target="_blank"
