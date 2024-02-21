@@ -43,11 +43,7 @@ const Navbar = () => {
               onClick={() => setToggle(!toggle)}
             >
               Resume
-              <img
-                className="icon"
-                src={downloadIcon}
-                alt="download icon"
-              />
+              <img className="icon" src={downloadIcon} alt="download icon" />
             </a>
           </li>
         </div>
@@ -69,7 +65,7 @@ const Navbar = () => {
             <ul className="app__navbar-links ">
               {["home", "about", "work", "skills", "contact"].map((item) => {
                 return (
-                  <li key={`${item}`} role="button " >
+                  <li key={`${item}`} role="button">
                     <a
                       href={`#${item}`}
                       onClick={() => setToggle(!toggle)}

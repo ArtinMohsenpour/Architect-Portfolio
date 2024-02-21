@@ -115,13 +115,13 @@ const Work = () => {
           <div className="app__work-item app__flex" key={index}>
             <div className="app__work-img app__flex">
               {imgIndex === 1 && (
-                <img src={urlFor(work.imgUrl1)} alt="work-image" />
+                <img src={urlFor(work.imgUrl1)} alt="work-image1" />
               )}
               {imgIndex === 2 && (
-                <img src={urlFor(work.imgUrl2)} alt="work-image" />
+                <img src={urlFor(work.imgUrl2)} alt="work-image2" />
               )}
               {imgIndex === 3 && (
-                <img src={urlFor(work.imgUrl3)} alt="work-image" />
+                <img src={urlFor(work.imgUrl3)} alt="work-image3" />
               )}
               <button className="swipper__left_button" onClick={showPrevImage}>
                 <img src={leftArrow} alt="arrowleft" />
