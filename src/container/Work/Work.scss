@@ -72,14 +72,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  width: 110%;
 
   .app__work-item {
     width: 380px;
     height: auto;
+    top: 0;
     flex-direction: column;
-
-    margin: 2rem;
+    margin-top: 35px;
+    margin-inline: 2rem;
     padding: 1rem;
     border-radius: 0.5rem;
     background-color: #fff;
@@ -110,6 +112,7 @@
       margin: 1rem;
     }
   }
+ 
 }
 
 .app__work-img {

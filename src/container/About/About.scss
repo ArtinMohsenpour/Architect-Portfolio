@@ -30,18 +30,18 @@
 }
 
 @keyframes movingText {
-  0% {
+  5% {
     transform: translateX(-20%);
   }
-  14% {
+  16% {
     transform: translateX(0);
   }
 }
 @keyframes movingText2 {
-  0% {
+  5% {
     transform: translateX(20%);
   }
-  14% {
+  16% {
     transform: translateX(0);
   }
 }

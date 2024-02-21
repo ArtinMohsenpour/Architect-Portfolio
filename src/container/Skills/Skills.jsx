@@ -16,32 +16,27 @@ const Skills = () => {
 
   //
   const skillsArray = [
-    "HTML5",
-    "CSS3",
-    "JavaScript",
-    "React",
-    "redux",
-    "hooks",
-    "Rest APIs",
-    "TypeScript",
-    "Python",
-    "JQUERY",
-    "Next.js",
-    "Three.js",
-    "Git, GitHub",
-    "Datatypes",
-    "Bootstrap",
-    "SASS",
-    "Tailwind",
-    "Figma",
-    "Adobe XD",
-    "UI",
+    "Revit",
+    "AutoCAD",
+    "Rhinoceros",
+    "Adobe Photoshop",
+    "Enscape",
+    "InDesign",
+    "Lumion",
+    "Sketchup",
+    "Microsoft Offices",
+    "Athena",
+    "Adobe Creative Suite",
+    "Flixo",
+    "SchüCal",
+    "Ubakus",
   ];
   const softSkills = [
-    "Responsive Design",
     "Communication",
-    "E-Commerce",
-    "Problem-Solving",
+    "Problem-solving",
+    "Creativity",
+    "Client Management",
+    "Adaptability",
     "Team Collaboration",
     "Time Management",
     "Attention to Detail",
@@ -77,7 +72,7 @@ const Skills = () => {
           );
         });
 
-        setExperiences(array1);
+        setExperiences(data);
       } catch (error) {
         console.error("Error fetching experiences data:", error);
       }

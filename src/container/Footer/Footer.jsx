@@ -80,14 +80,14 @@ const Footer = () => {
       <div className="app__footer-cards">
         <div className="app__footer-card ">
           <img src={images.email} alt="email" />
-          <a href="mailto:mohsenpour.artin@gmail.com" className="p-text">
-            mohsenpour.artin@gmail.com
+          <a href="mailto:Minakherad@yahoo.com" className="p-text">
+            Minakherad@yahoo.com
           </a>
         </div>
         <div className="app__footer-card">
           <img src={images.mobile} alt="phone" />
-          <a href="tel:+1 (123) 456-7890" className="p-text">
-            +49 163 789 4136
+          <a href="tel:+49 157 5320 1935" className="p-text">
+            +49 157 5320 1935
           </a>
         </div>
       </div>
@@ -133,8 +133,20 @@ const Footer = () => {
       )}
 
       <div>
-        <div className="container">
-          <p>&copy; 2024 Abolfazl Mohsenpour. All Rights Reserved.</p>
+        <div
+          className="container"
+          style={{ marginTop: "50px", color: "#6b7688" }}
+        >
+          <p>
+            &copy; 2024{" "}
+            <a
+              style={{ textDecoration: "none" }}
+              href="https://artinmohsenpour.com/"
+            >
+              Abolfazl Mohsenpour
+            </a>
+            . All Rights Reserved.
+          </p>
         </div>
       </div>
     </>
