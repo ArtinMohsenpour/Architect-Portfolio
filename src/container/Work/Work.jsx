@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
 import leftArrow from "../../assets/left-arrow.png";
 import rightArrow from "../../assets/right-arrow.png";
@@ -115,29 +114,20 @@ const Work = () => {
         {filterWork.map((work, index) => (
           <div className="app__work-item app__flex" key={index}>
             <div className="app__work-img app__flex">
-              {imgIndex == 1 && (
-                <img
-                  src={urlFor(work.imgUrl1)}
-                  alt={`${work.name ? work.name : "image-work"}`}
-                />
+              {imgIndex === 1 && (
+                <img src={urlFor(work.imgUrl1)} alt="work-image" />
               )}
-              {imgIndex == 2 && (
-                <img
-                  src={urlFor(work.imgUrl2)}
-                  alt={`${work.name ? work.name : "image-work"}`}
-                />
+              {imgIndex === 2 && (
+                <img src={urlFor(work.imgUrl2)} alt="work-image" />
               )}
-              {imgIndex == 3 && (
-                <img
-                  src={urlFor(work.imgUrl3)}
-                  alt={`${work.name ? work.name : "image-work"}`}
-                />
+              {imgIndex === 3 && (
+                <img src={urlFor(work.imgUrl3)} alt="work-image" />
               )}
               <button className="swipper__left_button" onClick={showPrevImage}>
-                <img src={leftArrow} />
+                <img src={leftArrow} alt="arrowleft" />
               </button>
               <button className="swipper__right_button" onClick={showNextImage}>
-                <img src={rightArrow} />
+                <img src={rightArrow} alt="arrowright" />
               </button>
             </div>
 

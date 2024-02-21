@@ -70,7 +70,7 @@ const Header = () => (
         </p>
       </Tilt>
       <div className="badge-cmp">
-        <img src={logo} />
+        <img src={logo} alt="logo"/>
       </div>
       <motion.div className="badge-cmp">
         <p
