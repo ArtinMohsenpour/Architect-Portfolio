@@ -183,6 +183,25 @@
           }
         }
       }
+      @media screen and (min-width: 450px) {
+        display: flex;
+        flex-wrap: wrap;
+        height: 50vh;
+        width: 100%;
+        li {
+          display: flex;
+          width:fit-content;
+        z-index: 125;
+        background-color: #ffffffd5;
+        margin: 0.7rem;
+        margin-left: 0;
+        padding: 0.5rem;
+        padding-inline: 0.75rem;
+        border-radius: 15px;
+        justify-content: center;
+        text-align: center;
+        }
+      }
     }
 
     @media screen and (min-width: 900px) {
@@ -211,12 +230,12 @@
 .icon__container span {
   display: inline-block; /* Ensure the span element is inline-block */
 }
-.HiX_container {
-  display: inline;
-  width: 100%;
-  justify-content: flex-end;
-  align-items: end;
-}
+// .HiX_container {
+//   display: inline;
+//   width: 100%;
+//   justify-content: flex-end;
+//   align-items: end;
+// }
 
 .HiX {
   position: fixed;
