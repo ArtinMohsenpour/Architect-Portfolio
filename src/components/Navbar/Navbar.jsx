@@ -62,7 +62,7 @@ const Navbar = () => {
               onClick={() => setToggle(!toggle)}
               cursor="pointer"
             />
-            <ul className="app__navbar-links ">
+            <ul className="app__navbar-links nav__menu_container">
               {["home", "about", "work", "skills", "contact"].map((item) => {
                 return (
                   <li key={`${item}`} role="button">
