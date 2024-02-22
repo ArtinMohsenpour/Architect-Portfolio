@@ -57,11 +57,13 @@ const Navbar = () => {
             whileInView={{ x: [150, 0] }}
             transition={{ duration: 0.85, ease: "easeOut" }}
           >
-            <HiX
-              className="HiX"
-              onClick={() => setToggle(!toggle)}
-              cursor="pointer"
-            />
+            <div className="HiX container">
+              <HiX
+                className="HiX"
+                onClick={() => setToggle(!toggle)}
+                cursor="pointer"
+              />
+            </div>
             <ul className="app__navbar-links nav__menu_container">
               {["home", "about", "work", "skills", "contact"].map((item) => {
                 return (

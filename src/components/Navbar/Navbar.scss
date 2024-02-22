@@ -144,7 +144,7 @@
       list-style: none;
       margin-top: 3.5rem;
       padding: 0;
-      height:fit-content;
+      height: fit-content;
       width: 100%;
       z-index: 125;
       display: flex;
@@ -210,6 +210,12 @@
 
 .icon__container span {
   display: inline-block; /* Ensure the span element is inline-block */
+}
+.HiX_container {
+  display: inline;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: end;
 }
 
 .HiX {
