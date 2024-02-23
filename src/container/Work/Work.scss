@@ -73,11 +73,12 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  width: 110%;
+  width: 100%;
 
   .app__work-item {
-    width: 380px;
+    width: 100%;
     height: auto;
+    max-width: 100%;
     top: 0;
     flex-direction: column;
     margin-top: 35px;
@@ -102,17 +103,53 @@
     }
 
     @media screen and (min-width: 1920px) {
-      width: 470px;
+      width: 33%;
       padding: 1.25rem;
       border-radius: 0.75rem;
+      max-width: 100%;
     }
 
-    @media screen and (max-width: 300px) {
+    @media screen and (max-width: 1920px) {
+      width: 40%;
+      margin: 1rem;
+      max-width: 100%;
+    }
+    @media screen and (max-width: 1720px) {
+      width: 40%;
+      margin: 1rem;
+      max-width: 100%;
+    }
+    @media screen and (max-width: 1500px) {
+      width: 40%;
+      margin: 1rem;
+      max-width: 100%;
+    }
+    @media screen and (max-width: 1280px) {
+      width: 70%;
+      margin: 1rem;
+      max-width: 100%;
+    }
+    @media screen and (max-width: 1100px) {
+      width: 80%;
+      margin: 1rem;
+      max-width: 100%;
+    }
+    @media screen and (max-width: 920px) {
+      width: 85%;
+      margin: 1rem;
+      max-width: 100%;
+    }
+    @media screen and (max-width: 720px) {
+      width: 90%;
+      margin: 1rem;
+      max-width: 100%;
+    }
+    @media screen and (max-width: 500px) {
       width: 100%;
       margin: 1rem;
+      max-width: 100%;
     }
   }
- 
 }
 
 .app__work-img {
