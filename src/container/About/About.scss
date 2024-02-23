@@ -29,23 +29,45 @@
   }
 }
 
+// @keyframes movingText {
+//   5% {
+//     transform: translateX(-20%);
+//   }
+//   16% {
+//     transform: translateX(0);
+//   }
+// }
+// @keyframes movingText2 {
+//   5% {
+//     transform: translateX(20%);
+//   }
+//   16% {
+//     transform: translateX(0);
+//   }
+// }
 @keyframes movingText {
-  5% {
+  0% {
     transform: translateX(-20%);
   }
-  16% {
+  50% {
     transform: translateX(0);
   }
-}
-@keyframes movingText2 {
-  5% {
+  100% {
     transform: translateX(20%);
-  }
-  16% {
-    transform: translateX(0);
   }
 }
 
+@keyframes movingText2 {
+  0% {
+    transform: translateX(20%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-20%);
+  }
+}
 .black__span {
   color: black !important;
 }
