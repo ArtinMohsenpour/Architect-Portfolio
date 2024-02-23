@@ -18,6 +18,7 @@
   animation-timeline: scroll();
   @media screen and (max-width: 980px) {
     animation: none;
+    font-size: smaller;
   }
 }
 .text__scroll_right {
@@ -26,6 +27,7 @@
   animation-timeline: scroll();
   @media screen and (max-width: 980px) {
     animation: none;
+    font-size: smaller;
   }
 }
 
@@ -81,8 +83,8 @@
   flex-direction: column;
   margin: 2rem;
   img {
-    width: 100%;
-    height: 80%;
+    width: 80%;
+    height: 65%;
     border-radius: 15px;
     object-fit: cover;
   }
@@ -92,9 +94,9 @@
 
   @media screen and (min-width: 1920px) {
     width: 30%;
-    max-width: 100%;
+
     img {
-      width: 100%;
+      width: 80%;
       height: 50%;
       border-radius: 15px;
       object-fit: cover;
@@ -104,20 +106,20 @@
     }
   }
   @media screen and (max-width: 1920px) {
-    width: 33%;
-    max-width: 100%;
+    width: 25%;
+
     p {
-      font-size: 1.35rem;
+      font-size: 1.2rem;
     }
     img {
       width: 100%;
-      height: 50%;
+      height: 30%;
       border-radius: 15px;
       object-fit: cover;
     }
   }
   @media screen and (max-width: 1720px) {
-    width: 40%;
+    width: 27%;
     max-width: 100%;
     img {
       width: 100%;
@@ -130,7 +132,7 @@
     }
   }
   @media screen and (max-width: 1550px) {
-    width: 40%;
+    width: 30%;
     max-width: 100%;
     img {
       width: 100%;
@@ -143,7 +145,7 @@
     }
   }
   @media screen and (max-width: 1280px) {
-    width: 50%;
+    width: 35%;
     max-width: 100%;
     img {
       width: 100%;
@@ -152,11 +154,11 @@
       object-fit: cover;
     }
     p {
-      font-size: 1.3rem;
+      font-size: 1rem;
     }
   }
   @media screen and (max-width: 1100px) {
-    width: 80%;
+    width: 35%;
     max-width: 100%;
     img {
       width: 100%;
@@ -165,11 +167,11 @@
       object-fit: cover;
     }
     p {
-      font-size: 1.25rem;
+      font-size: 1rem;
     }
   }
   @media screen and (max-width: 920px) {
-    width: 85%;
+    width: 35%;
     max-width: 100%;
     img {
       width: 100%;
@@ -178,11 +180,11 @@
       object-fit: cover;
     }
     p {
-      font-size: 1.1rem;
+      font-size: 0.75rem;
     }
   }
   @media screen and (max-width: 720px) {
-    width: 100%;
+    width: 35%;
     max-width: 100%;
     img {
       width: 100%;
@@ -190,16 +192,18 @@
       border-radius: 15px;
       object-fit: cover;
     }
+    h2 {
+      font-size: small;
+    }
     p {
-      font-size: 0.95rem;
+      font-size: 0.65rem;
     }
   }
   @media screen and (max-width: 500px) {
     width: 100%;
-    max-width: 100%;
     img {
       width: 100%;
-      height: 80%;
+      height: 50%;
       border-radius: 15px;
       object-fit: cover;
     }
