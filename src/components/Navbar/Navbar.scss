@@ -17,16 +17,17 @@
   position: absolute;
   width: 100%;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
   margin-top: 5rem;
   align-self: center;
   top: 0;
 
-  z-index: 20;
+  z-index: 1;
   padding: 0rem 1rem;
   left: 0;
 }
 .text__banner {
+  
   display: flex;
   width: max-content;
   margin-top: 0.5rem;
@@ -289,12 +290,7 @@
 .icon__container span {
   display: inline-block; /* Ensure the span element is inline-block */
 }
-// .HiX_container {
-//   display: inline;
-//   width: 100%;
-//   justify-content: flex-end;
-//   align-items: end;
-// }
+
 
 .HiX {
   position: fixed;
