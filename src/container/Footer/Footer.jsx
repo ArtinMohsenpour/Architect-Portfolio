@@ -75,7 +75,7 @@ const Footer = () => {
 
   return (
     <>
-      <h2 className="head-text scroll__scale">Take a coffee & chat with me</h2>
+      <h2 className="head-text">Take a coffee & chat with me</h2>
 
       <div className="app__footer-cards">
         <div className="app__footer-card ">
@@ -132,22 +132,20 @@ const Footer = () => {
         </div>
       )}
 
-      <div>
-        <div
-          className="container"
-          style={{ marginTop: "50px", color: "#6b7688" }}
-        >
-          <p>
-            &copy; 2024{" "}
-            <a
-              style={{ textDecoration: "none" }}
-              href="https://artinmohsenpour.com/"
-            >
-              Abolfazl Mohsenpour
-            </a>
-            . All Rights Reserved.
-          </p>
-        </div>
+      <div
+        className="container"
+        style={{ marginTop: "50px", color: "#6b7688" }}
+      >
+        <p>
+          &copy; 2024{" "}
+          <a
+            style={{ textDecoration: "none" }}
+            href="https://artinmohsenpour.com/"
+          >
+            Abolfazl Mohsenpour
+          </a>
+          . All Rights Reserved.
+        </p>
       </div>
     </>
   );
